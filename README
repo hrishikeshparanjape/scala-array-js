@@ -6,4 +6,61 @@
 
 JavaScript Library for Scala Style Sequence(seq) extending several operations on JS Array object
 
-API Reference coming soon
+API Reference:
+
+Array -->
+    foldLeft( Object initialValue )( function( Object result, Object current ) : Object ) : Object
+        Folds the array from left to right and evaluates curried function as array is traversed.
+        Example:
+        var arr=[1,2,3,4,5];
+        arr.foldLeft(0)(function(result,current){return result+current}); //returns 15
+        arr.foldLeft(1)(function(result,current){return result*current}); //returns 120
+        Also see: http://www.scala-lang.org/api/current/index.html#scala.collection.Seq
+
+    tail( ) : Array
+        Gives the same array with first element removed (inspired from scheme (lst tail))
+        Example:
+        var arr=[1,2,3,4,5];
+        arr.tail(); //returns [2,3,4,5]
+
+    take( Number num ) : Array
+        Selects first n elements
+        Example:
+        var arr=[1,2,3,4,5];
+        arr.take(3); //returns [1,2,3]
+        Also see: http://www.scala-lang.org/api/current/index.html#scala.collection.Seq
+
+    takeRight( Number num ) : Array
+        Selects last n elements
+        Example:
+        var arr=[1,2,3,4,5];
+        arr.takeRight(3); //returns [3,4,5]
+        Also see: http://www.scala-lang.org/api/current/index.html#scala.collection.Seq
+
+    toIndexedArray( ) : Array[{index:i,value:v}]
+        Converts this sequence to an indexed sequence.
+        Example:
+        var arr=[1,2,3,4,5];
+        arr.toIndexedArray( ); //returns [{index:0,value:1},{index:1,value:2},...{index:4,value:5}]
+        Also see: http://www.scala-lang.org/api/current/index.html#scala.collection.Seq
+
+    find( function( Object o) : Boolean ) : Number
+        Finds the first element of the sequence satisfying a predicate, if any
+        Example:
+        var arr=[1,2,3,4,5];
+        arr.find(function(x){return (x % 3 == 0);}); //returns 2
+        Also see: http://www.scala-lang.org/api/current/index.html#scala.collection.Seq
+
+    first( ) : Object
+        Returns first element of array
+        Example:
+        var arr=[1,2,3,4,5];
+        arr.first(); //returns 1
+        Also see: http://www.scala-lang.org/api/current/index.html#scala.collection.Seq
+
+    last( ) : Object
+        Returns last element of array
+        Example:
+        var arr=[1,2,3,4,5];
+        arr.last(); //returns 5
+        Also see: http://www.scala-lang.org/api/current/index.html#scala.collection.Seq
