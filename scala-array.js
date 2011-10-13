@@ -3,12 +3,6 @@
     hrishikeshp19@gmail.com
     http://www.github.com/hrishikeshparanjape
 */
-Array.prototype.first=function(){
-	"use strict";return this[0];
-};
-Array.prototype.last=function(){
-	"use strict";return this[this.length-1];
-};
 Array.prototype.foldLeft=function(initialValue){
 	"use strict";var arr=this;
 	return function(expression){
@@ -43,4 +37,10 @@ Array.prototype.find=function(predicate){
 			return i;
 		}
 	}
+};
+Array.prototype.first=function(){
+	"use strict";return this[0];
+};
+Array.prototype.last=function(){
+	"use strict";return this[this.length-1];
 };
